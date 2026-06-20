@@ -11,7 +11,7 @@ This is a script that accepts user input(Device Name, IP or Domains) and stores 
 ### Loop initialization
 #### Files Greater than the specified file size
 
-`foreach($device in $devicesplit) {` -- Foreach loop initialized, each value of $devicesplit is placed into $device one at a time
+`foreach($device in $devicesplit) { ` -- Foreach loop initialized, each value of $devicesplit is placed into $device one at a time
 
 
 
@@ -35,7 +35,7 @@ This is a script that accepts user input(Device Name, IP or Domains) and stores 
 
 
   
-}`
+`}`
 
 
 
