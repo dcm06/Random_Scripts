@@ -89,8 +89,20 @@ This is a script that accepts user input and stores it into a variable. It does 
 
 
 
+
 ` }`
 
 
 
 ` Write-Host "Total = $counter2 Files"`
+
+
+
+
+---
+### PREVIEW
+---
+
+<img width="1122" height="830" alt="Screenshot 2026-06-20 164659" src="https://github.com/user-attachments/assets/c7b67c25-b566-45c1-81b1-196fe229d324" />
+
+
