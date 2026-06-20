@@ -15,12 +15,38 @@ This is a script that accepts user input and stores it into a variable. It does 
 
 `foreach ($file in $files) {`
 
+
+
 `	if($file.Length -gt $filesize){`
+
+
+
 `		$counter1 = $counter1 + 1`
+
+
+
 `		Write-Host "$file" -ForegroundColor Blue`
+
+
+
 `	} `
+
+
+
 `}`
+
+
+
 `if($counter1 -eq 0){`
+
+
+
 `	Write-Host "None" -ForegroundColor Red`
+
+
+
 `}`
+
+
+
 `Write-Host "Total = $counter1 Files"`
