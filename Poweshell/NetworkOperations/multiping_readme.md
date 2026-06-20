@@ -15,28 +15,27 @@ This is a script that accepts user input(Device Name, IP or Domains) and stores 
 
 
 
-
-	`Write-Host ""`
-
+	Write-Host ""
 
 
 
-	`Write-Host "Testing Connection to $device"`
 
-
-
-  
-	`Write-Host "-----------------------------"`
+	Write-Host "Testing Connection to $device"
 
 
 
   
-	`Test-Connection $device -count $numbercount` -- Uses Powershell **Test-Connection** cmdlet to test the connection between the current device and the device specified in $devices, then $numbercount value used for the number of connections for each device,IP, or Domain
+	Write-Host "-----------------------------"
 
 
 
   
-`}`
+	Test-Connection $device -count $numbercount` -- Uses Powershell **Test-Connection** cmdlet to test the connection between the current device and the device specified in $devices, then $numbercount value used for the number of connections for each device,IP, or Domain
+
+
+
+  
+}`
 
 
 
