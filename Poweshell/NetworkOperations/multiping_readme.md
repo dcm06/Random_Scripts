@@ -13,8 +13,7 @@ This is a script that accepts user input(Device Name, IP or Domains) and stores 
 
 `foreach($device in $devicesplit) { ` -- Foreach loop initialized, each value of $devicesplit is placed into $device one at a time
 
-
-	Write-Host ""
+  `Write-Host ""`
 
 
 
