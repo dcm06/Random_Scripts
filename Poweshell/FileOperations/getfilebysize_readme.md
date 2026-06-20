@@ -14,6 +14,7 @@ This is a script that accepts user input and stores it into a variable. It does 
 #### Files Greater than the specified file size
 
 `foreach ($file in $files) {`
+
 `	if($file.Length -gt $filesize){`
 `		$counter1 = $counter1 + 1`
 `		Write-Host "$file" -ForegroundColor Blue`
