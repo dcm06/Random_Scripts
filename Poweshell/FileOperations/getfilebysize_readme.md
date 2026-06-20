@@ -106,3 +106,7 @@ This is a script that accepts user input and stores it into a variable. It does 
 <img width="1122" height="830" alt="Screenshot 2026-06-20 164659" src="https://github.com/user-attachments/assets/c7b67c25-b566-45c1-81b1-196fe229d324" />
 
 
+<img width="1047" height="980" alt="Screenshot 2026-06-20 165138" src="https://github.com/user-attachments/assets/a481f7ce-a279-4e36-b4b8-4a654732b174" />
+
+
+
