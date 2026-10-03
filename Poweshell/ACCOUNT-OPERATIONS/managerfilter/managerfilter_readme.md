@@ -35,11 +35,6 @@ This is a script that accepts user input and stores it into a variable. It does 
             } |
             Select-Object -property $select
         }
-
-
-
-
-
   
 - `user` -- Filters by user first and last name.
 
@@ -60,11 +55,6 @@ This is a script that accepts user input and stores it into a variable. It does 
             Select-Object -property $select
         }
 
-
-
-
-
-  
 - `usercsv` -- Filters by user, then exports the results to csv.
 
 
@@ -93,7 +83,54 @@ This is a script that accepts user input and stores it into a variable. It does 
         }
 
 - `manager` -- Filters by manager and city.
+
+
+
+        function manager {
+            $manfirst = Read-Host "Enter Manager first Name"
+            $manlast = Read-Host "Enter Manager last Name"
+            $city = Read-Host "Enter City (Press Enter to search all)"
+            $select = "Name","Title","SamAccountName"
+        
+            if ($city -eq ""){
+                $city = "*"
+                $select = "Name","Title","SamAccountName","City"
+            }
+            Get-ADUser -Filter * `
+            -properties Manager,Title,City -ErrorAction Stop |
+            Where-Object {
+                $_.Manager -like "CN=$manlast\, $manfirst*" -and
+                $_.City -like "*$city*"
+            } |
+            Select-Object -property $select
+        }
 - `Title` -- Filters by the user title and city
+
+
+
+
+        function Title {
+            $usertitle = Read-Host "Enter Job Title"
+            $city = Read-Host "Enter City (Press Enter to search all)"
+            $select = "Name","Title","SamAccountName", "Manager"
+        
+            if ($city -eq ""){
+                $city = "*"
+                $select = "Name","Title","SamAccountName","City","Manager"
+            }
+        
+            if ($usertitle -eq ""){
+                $usertitle = "*"
+            }
+        
+            Get-ADUser -Filter * `
+            -Properties Manager,Title,City -ErrorAction Stop |
+            Where-Object {
+                $_.Title -like "*$usertitle*" -and
+                $_.City -like "*$city*"
+            } |
+            Select-Object -property $select
+        }
 
 # Code Block explanations
 ## Error Handling
