@@ -2,6 +2,14 @@
 ### Description
 This is a powershell script that accepts single letter options, reads user input and stores in variabless, performs AD Querries based on the options and inputs enterred, and finally displays the results in cmd or exports to CSV.
 
+
+
+
+### Main Variable
+**$scriptops** -- This variable is used to make the main decision of what functions are run.
+        
+        $scriptops = Read-Host "Enter filter operation | Manager Only - (M), Title Only - (T), Both - (B), Find User's Manager - (U)"
+
 ### Defined functions
 
 - `both` -- This function filters by manager, title and City in AD.
