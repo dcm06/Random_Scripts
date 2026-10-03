@@ -5,6 +5,24 @@ This is a powershell script that accepts single letter options, reads user input
 
 
 
+
+
+
+
+### PREVIEW
+---
+
+<img width="1046" height="482" alt="image" src="https://github.com/user-attachments/assets/4c1c117c-2ea9-43e4-bf3a-b991587bf9f7" />
+
+
+
+
+
+
+
+
+
+
 ### Main Variable
 **$scriptops** -- This variable is used to make the main decision of what functions are run.
         
@@ -218,10 +236,8 @@ This is a powershell script that accepts single letter options, reads user input
                 }
         }
 
-### PREVIEW
----
 
-<img width="1122" height="830" alt="Screenshot 2026-06-20 164659" src="https://github.com/user-attachments/assets/c7b67c25-b566-45c1-81b1-196fe229d324" />
+
 
 
 <img width="1047" height="980" alt="Screenshot 2026-06-20 165138" src="https://github.com/user-attachments/assets/a481f7ce-a279-4e36-b4b8-4a654732b174" />
