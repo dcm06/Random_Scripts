@@ -10,11 +10,11 @@ This is a script that accepts user input and stores it into a variable. It does 
 - `manager` -- Filters by manager and city.
 - `Title` -- Filters by the user title and city
 
-### Code Block explanations
+# Code Block explanations
 ## Error Handling
 
 
-# Error Message when **$scriptops** is empty
+### Error Message when **$scriptops** is empty
     ## If script operation variable is empty
     if ($scriptops -eq ""){
         throw "Option Cannot be empty"
