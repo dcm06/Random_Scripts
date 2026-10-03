@@ -35,8 +35,63 @@ This is a script that accepts user input and stores it into a variable. It does 
             } |
             Select-Object -property $select
         }
+
+
+
+
+
+  
 - `user` -- Filters by user first and last name.
+
+
+
+
+        function user {
+            $userfirst = Read-Host "Enter User first Name"
+            $userlast = Read-Host "Enter User last Name"
+            $select = "Manager","SamAccountName","Title", "City"
+        
+        
+            Get-ADUser -Filter * `
+            -properties Name,Manager,Title,City -ErrorAction Stop |
+            Where-Object {
+                $_.Name -like "$userlast, $userfirst"
+            } |
+            Select-Object -property $select
+        }
+
+
+
+
+
+  
 - `usercsv` -- Filters by user, then exports the results to csv.
+
+
+
+        function usercsv {
+            $path = (Read-Host "Enter CSV file Path - [No quotes]").ToString()
+            $select = "Manager","SamAccountName","Title","Name"
+            $count = get-content $path | convertfrom-csv | select-object -property "id" 
+        
+            
+            for ($counter=1; $counter -le $count.count; $counter++){
+                $name = get-content $path | convertfrom-csv | where-object -property "id" -eq $counter
+        
+                $userfirst = $name."first name"
+                $userlast = $name."last name"
+        
+        
+                Get-ADUser -Filter * `
+                -properties Name,Manager,Title,City -ErrorAction Stop |
+                Where-Object {
+                    $_.Name -like "$userlast, $userfirst"
+                } |
+                Select-Object -property $select
+            }
+        
+        }
+
 - `manager` -- Filters by manager and city.
 - `Title` -- Filters by the user title and city
 
