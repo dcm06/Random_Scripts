@@ -237,7 +237,3 @@ This is a powershell script that accepts single letter options, reads user input
         }
 
 
-
-
-
-<img width="1047" height="980" alt="Screenshot 2026-06-20 165138" src="https://github.com/user-attachments/assets/a481f7ce-a279-4e36-b4b8-4a654732b174" />
