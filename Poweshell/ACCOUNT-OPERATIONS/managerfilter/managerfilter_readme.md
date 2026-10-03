@@ -20,7 +20,11 @@ This is a script that accepts user input and stores it into a variable. It does 
         throw "Option Cannot be empty"
     
     }
-    
+
+
+
+
+### Error message when **$scriptops** gets an invalid option
     ## If script operation variable is an invalid option
     if ($scriptops -ne "B" -and $scriptops -ne "M" -and $scriptops -ne "T" -and $scriptops -ne "U"){
         throw "Invalid Option"
