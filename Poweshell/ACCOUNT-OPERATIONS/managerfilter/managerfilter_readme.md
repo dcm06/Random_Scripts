@@ -5,6 +5,36 @@ This is a script that accepts user input and stores it into a variable. It does 
 ### Defined functions
 
 - `both` -- This function filters by manager, title and City in AD.
+
+
+
+
+
+        function both {
+            $manfirst = Read-Host "Enter Manager first Name"
+            $manlast = Read-Host "Enter Manager last Name"
+            $city = Read-Host "Enter City"
+            $usertitle = Read-Host "Enter Job Title"
+            $select = "Name","Title","SamAccountName"
+        
+            if ($city -eq ""){
+                $city = "*"
+                $select = "Name","Title","SamAccountName","City"
+            }
+        
+            if ($usertitle -eq ""){
+                $usertitle = "*"
+            }
+        
+            Get-ADUser -Filter * `
+            -properties Manager,Title,City -ErrorAction Stop |
+            Where-Object {
+                $_.Manager -like "CN=$manlast\, $manfirst*" -and
+                $_.Title -like "*$usertitle*" -and
+                $_.City -like "*$city*"
+            } |
+            Select-Object -property $select
+        }
 - `user` -- Filters by user first and last name.
 - `usercsv` -- Filters by user, then exports the results to csv.
 - `manager` -- Filters by manager and city.
@@ -30,7 +60,11 @@ This is a script that accepts user input and stores it into a variable. It does 
         throw "Invalid Option"
     
     }
-    
+
+
+
+
+### Function running and error handling for each valid **$scriptops** option and other function options
     #### If script operation variable is not empty
     if ($scriptops -ne ""){
         ## If option B is chosen
