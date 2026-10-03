@@ -1,6 +1,6 @@
-# GET FILE BY SIZE
+# MANAGER FILTER
 ### Description
-This is a script that accepts user input and stores it into a variable. It does this using the `Read-Host` Cmdlet
+This is a powershell script that accepts single letter options, reads user input and stores in variabless, performs AD Querries based on the options and inputs enterred, and finally displays the results in cmd or exports to CSV.
 
 ### Defined functions
 
@@ -132,8 +132,7 @@ This is a script that accepts user input and stores it into a variable. It does 
             Select-Object -property $select
         }
 
-# Code Block explanations
-## Error Handling
+# Function Calls and Error Handling
 
 
 ### Error Message when **$scriptops** is empty
